@@ -4,11 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projectthon Invitation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins&display=swap" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Quicksand&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Quicksand', sans-serif;
       background-color: #0b0b1e;
       color: #ffffff;
     }
@@ -41,12 +47,12 @@
       padding: 60px 20px;
       max-width: 800px;
       margin: auto;
-      animation: fadeInUp 1.5s ease;
     }
     .section h2 {
       color: #b673f1;
       font-size: 2rem;
       margin-bottom: 20px;
+      font-family: 'Orbitron', sans-serif;
     }
     .details {
       background-color: #1a1a2e;
@@ -76,10 +82,6 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
@@ -106,7 +108,7 @@
     Your browser does not support the audio element.
   </audio>
 
-  <div class="hero">
+  <div class="hero" data-aos="fade-down">
     <img src="coding club original.png" alt="Coding Club Logo">
     <h1>Projectthon 2025</h1>
     <p><strong>Date:</strong> 23rd April 2025</p>
@@ -115,12 +117,12 @@
     <div class="countdown" id="countdown"></div>
   </div>
 
-  <div class="section">
+  <div class="section" data-aos="zoom-in">
     <h2>About Projectthon</h2>
     <p>Projectthon is a one-of-a-kind opportunity for students and innovators to come together and showcase their most creative and impactful projects. — this is your stage to shine.</p>
   </div>
 
-  <div class="section details">
+  <div class="section details" data-aos="fade-up">
     <h2>Event Details</h2>
     <ul>
       <li><strong>Date:</strong> 23rd April 2025</li>
@@ -131,12 +133,13 @@
     </ul>
   </div>
 
-  <footer>
+  <footer data-aos="flip-up">
     <img src="coding club original.png" alt="Coding Club Logo">
     <p>Organized by Coding Club</p>
     <p><em>"Decode the Feature"</em></p>
   </footer>
 
+  <!-- Countdown Timer -->
   <script>
     const countdown = () => {
       const countDate = new Date("April 23, 2025 10:00:00").getTime();
@@ -158,6 +161,15 @@
     };
 
     setInterval(countdown, 1000);
+  </script>
+
+  <!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
   </script>
 </body>
 </html>
