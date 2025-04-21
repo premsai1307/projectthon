@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projectthon Invitation</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Quicksand&display=swap" rel="stylesheet">
+
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background-color: #0b0b1e;
+      color: #ffffff;
+    }
+    .hero {
+      background: linear-gradient(135deg, #2c0f54, #180533);
+      text-align: center;
+      padding: 80px 20px;
+      animation: fadeIn 2s ease;
+    }
+    .hero img {
+      width: 150px;
+      animation: float 3s ease-in-out infinite;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin: 20px 0 10px;
+      color: #b673f1;
+      font-family: 'Orbitron', sans-serif;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+    .countdown {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      color: #ffde59;
+    }
+    .section {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .section h2 {
+      color: #b673f1;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-family: 'Orbitron', sans-serif;
+    }
+    .details {
+      background-color: #1a1a2e;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .details ul {
+      list-style: none;
+      padding: 0;
+    }
+    .details li {
+      margin: 10px 0;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: #120e29;
+      font-size: 0.9rem;
+      border-top: 1px solid #2a2a40;
+    }
+    footer img {
+      width: 60px;
+      margin-bottom: 10px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p, .countdown {
+        font-size: 1rem;
+      }
+      .section h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background music -->
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2022/10/09/audio_3a295dada1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="hero" data-aos="fade-down">
+    <img src="coding club original.png" alt="Coding Club Logo">
+    <h1>Projectthon 2025</h1>
+    <p><strong>Date:</strong> 23rd April 2025</p>
+    <p><strong>Venue:</strong> Aryabhata Building, Room 404<br>Centurion University</p>
+    <p><em>"NO WINNER NO LOOSER ONLY LEARNER "</em></p>
+    <div class="countdown" id="countdown"></div>
+  </div>
+
+  <div class="section" data-aos="zoom-in">
+    <h2>About Projectthon</h2>
+    <p>Projectthon is a one-of-a-kind opportunity for students and innovators to come together and showcase their most creative and impactful projects. — this is your stage to shine.</p>
+  </div>
+
+  <div class="section details" data-aos="fade-up">
+    <h2>Event Details</h2>
+    <ul>
+      <li><strong>Date:</strong> 23rd April 2025</li>
+      <li><strong>Time:</strong> Starts at 10:00 AM</li>
+      <li><strong>Venue:</strong> Aryabhata Building, Room 404, Centurion University</li>
+      <li><strong>Organized by:</strong> Coding Club of Centurion University</li>
+      <li><strong>Note:</strong> Bring your laptop and presentation files.</li>
+    </ul>
+  </div>
+
+  <footer data-aos="flip-up">
+    <img src="coding club original.png" alt="Coding Club Logo">
+    <p>Organized by Coding Club</p>
+    <p><em>"Decode the Feature"</em></p>
+  </footer>
+
+  <!-- Countdown Timer -->
+  <script>
+    const countdown = () => {
+      const countDate = new Date("April 23, 2025 10:00:00").getTime();
+      const now = new Date().getTime();
+      const gap = countDate - now;
+
+      const second = 1000;
+      const minute = second * 60;
+      const hour = minute * 60;
+      const day = hour * 24;
+
+      const textDay = Math.floor(gap / day);
+      const textHour = Math.floor((gap % day) / hour);
+      const textMinute = Math.floor((gap % hour) / minute);
+      const textSecond = Math.floor((gap % minute) / second);
+
+      document.getElementById("countdown").innerHTML =
+        `Starts in: ${textDay}d ${textHour}h ${textMinute}m ${textSecond}s`;
+    };
+
+    setInterval(countdown, 1000);
+  </script>
+
+  <!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+</body>
+</html>
