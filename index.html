@@ -225,6 +225,18 @@
     }, 1500);
   };
 </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const music = document.getElementById("bgMusic");
+
+    music.play().catch(() => {
+      document.addEventListener("click", () => {
+        music.play();
+      }, { once: true });
+    });
+  });
+</script>
+
 
 </body>
 </html>
