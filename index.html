@@ -37,13 +37,21 @@
       width: 150px;
       animation: float 3s ease-in-out infinite;
     }
-   .hero h1 {
-  font-size: 3.2rem;
-  margin: 20px 0 10px;
-  color: #ffde59;
-  font-family: 'Orbitron', sans-serif;
-  text-shadow: 0 0 10px #ffde59, 0 0 20px #ffde59, 0 0 30px #ffc107;
-   }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px #ffde59, 0 0 20px #ffde59, 0 0 30px #ffc107; }
+      50% { text-shadow: 0 0 20px #ffde59, 0 0 30px #ffd700, 0 0 40px #ffc107; }
+      100% { text-shadow: 0 0 10px #ffde59, 0 0 20px #ffde59, 0 0 30px #ffc107; }
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      margin: 20px 0 10px;
+      color: #ffde59;
+      font-family: 'Orbitron', sans-serif;
+      text-shadow: 0 0 10px #ffde59, 0 0 20px #ffde59, 0 0 30px #ffc107;
+      animation: glow 2s ease-in-out infinite;
+    }
 
     .hero p {
       font-size: 1.2rem;
@@ -191,13 +199,13 @@
   <div class="section details" id="guidelines" data-aos="fade-up">
     <h2>Hackathon Guidelines</h2>
     <ul>
-      <li><strong>👥 Team Size:</strong> 3 to 5 participants. Form teams before or at the event. Interdisciplinary teams encouraged.</li>
-      <li><strong>💻 Requirements:</strong> Projects must be built during the hackathon. Java Swing is required. Any tech stack may be integrated. Include a demo or presentation.</li>
-      <li><strong>⏱️ Time:</strong> 5-hour coding sprint with regular mentor check-ins.</li>
-      <li><strong>🧠 Judging:</strong> 40% Innovation, 30% Technical Complexity, 20% UX/UI, 10% Practical Impact.</li>
-      <li><strong>📜 Code of Conduct:</strong> Respect all, no harassment. Use open-source licenses.</li>
-      <li><strong>💡 Tips:</strong> Solve a real-world problem. Build a working prototype. Prepare a compelling pitch.</li>
-      <li><strong>📤 Submissions:</strong> GitHub repo link, 3-min demo video, README with setup instructions.</li>
+      <li><strong>👥 Team Size:</strong> 3 to 5 participants.</li>
+      <li><strong>💻 Requirements:</strong> Java Swing required. Build during hackathon.</li>
+      <li><strong>⏱️ Time:</strong> 5-hour sprint with mentor check-ins.</li>
+      <li><strong>🧠 Judging:</strong> Innovation, Technical, UX/UI, Impact.</li>
+      <li><strong>📜 Code of Conduct:</strong> Be respectful. Open-source friendly.</li>
+      <li><strong>💡 Tips:</strong> Solve real problems. Demo. Pitch well.</li>
+      <li><strong>📤 Submissions:</strong> GitHub link, demo video, README.</li>
     </ul>
     <a href="Hackathon Guidelines.docx" download style="display:inline-block;margin-top:15px;padding:10px 20px;background:#ffde59;color:#000;font-weight:bold;border-radius:5px;text-decoration:none;">Download Full Guidelines</a>
   </div>
