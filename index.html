@@ -3,82 +3,126 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projectthon Invitation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins&display=swap" rel="stylesheet">
+  <title>Projectthon 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #010d25;
+      background-color: #010D25;
       color: #ffffff;
-      overflow-x: hidden;
     }
 
-    /* Centurion University logo */
-    .centurion-logo {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 120px;
-      z-index: 1000;
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 30px;
+      background: #010D25;
+    }
+
+    header img {
+      height: 70px;
     }
 
     .hero {
-      background: linear-gradient(135deg, #2c0f54, #180533);
       text-align: center;
-      padding: 100px 20px 80px;
-      animation: fadeIn 2s ease;
-      position: relative;
-    }
-
-    .hero img.logo-main {
-      width: 150px;
-      animation: float 3s ease-in-out infinite;
-      margin-top: 20px;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #040f2a, #0e1d40);
+      animation: fadeIn 1.5s ease;
     }
 
     .hero h1 {
-  font-size: 3rem;
-  margin: 20px 0 10px;
-  color: #b673f1;
-  font-family: 'Orbitron', sans-serif;
-  text-shadow: 0 0 10px #b673f1, 0 0 20px #9b59b6;
-}
-
+      font-size: 3rem;
+      color: #ffc107;
+      font-family: 'Orbitron', sans-serif;
+      text-shadow: 0 0 10px #ff9d00;
+    }
 
     .hero p {
       font-size: 1.2rem;
-      margin-bottom: 5px;
+      color: #f5f5f5;
     }
 
-    .countdown {
+    #countdown {
       font-size: 1.5rem;
+      color: #00d4ff;
       margin-top: 20px;
-      color: #ffde59;
     }
 
     .section {
       padding: 60px 20px;
-      max-width: 800px;
-      margin: auto;
-      animation: fadeInUp 1.5s ease;
+      text-align: center;
+      animation: fadeInUp 1s ease-in-out;
     }
 
     .section h2 {
-      color: #b673f1;
-      font-size: 2rem;
+      color: #ffc107;
       margin-bottom: 20px;
     }
 
-    .details {
-      background-color: #1a1a2e;
+    .timeline {
+      position: relative;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background-color: #00d4ff;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+    }
+
+    .event {
+      padding: 20px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
+
+    .event::after {
+      content: ' ';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: -10px;
+      background-color: #00d4ff;
+      border: 3px solid #fff;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .left {
+      left: 0;
+    }
+
+    .right {
+      left: 50%;
+    }
+
+    .right::after {
+      left: -10px;
+    }
+
+    .event-content {
       padding: 20px;
-      border-radius: 10px;
+      background-color: #112e54;
+      position: relative;
+      border-radius: 6px;
+      text-align: left;
     }
 
     .details ul {
       list-style: none;
       padding: 0;
+      max-width: 700px;
+      margin: auto;
     }
 
     .details li {
@@ -86,16 +130,16 @@
     }
 
     footer {
+      background-color: #000d1d;
+      padding: 20px;
       text-align: center;
-      padding: 30px 20px;
-      background-color: #120e29;
       font-size: 0.9rem;
-      border-top: 1px solid #2a2a40;
+      border-top: 1px solid #222;
     }
 
     footer img {
-      width: 60px;
-      margin-bottom: 10px;
+      height: 50px;
+      margin: 10px;
     }
 
     @keyframes fadeIn {
@@ -104,139 +148,142 @@
     }
 
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
+    @media screen and (max-width: 768px) {
+      .event {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
 
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2rem;
+      .event::after {
+        left: 60px;
       }
-      .hero p, .countdown {
-        font-size: 1rem;
-      }
-      .section h2 {
-        font-size: 1.5rem;
-      }
-      .centurion-logo {
-        width: 90px;
+
+      .timeline::after {
+        left: 60px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Centurion University logo (top-left corner) -->
-  <img src="college-logo.png" alt="Centurion University Logo" class="centurion-logo">
+  <!-- Header with Centurion Logo -->
+  <header>
+    <img src="college logo.png" alt="Centurion Logo">
+    <img src="coding club original.png" alt="Coding Club Logo">
+  </header>
 
-  <!-- Background music -->
- <audio autoplay loop id="bgMusic">
-  <source src="bg-music.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
+  <!-- Hero Section -->
   <div class="hero">
-    <img src="coding club original.png" alt="Coding Club Logo" class="logo-main">
     <h1>Projectthon 2025</h1>
     <p><strong>Date:</strong> 23rd April 2025</p>
-    <p><strong>Venue:</strong> Aryabhata Building, Room 404<br>Centurion University</p>
-    <p><em>"Unleash Your Innovation!"</em></p>
-    <div class="countdown" id="countdown"></div>
+    <p><strong>Venue:</strong> Aryabhata Building, Room 404, Centurion University</p>
+    <p><em>"NO WINNER NO LOOSER ONLY LEARNER"</em></p>
+    <div id="countdown">Loading countdown...</div>
   </div>
 
+  <!-- About Section -->
   <div class="section">
     <h2>About Projectthon</h2>
-    <p>Projectthon is a one-of-a-kind opportunity for students and innovators to come together and showcase their most creative and impactful projects. This is your stage to shine.</p>
+    <p>Projectthon is a one-of-a-kind opportunity for students and innovators to showcase their most creative and impactful projects. This is your stage to shine!</p>
   </div>
 
+  <!-- Timeline Section -->
+  <div class="section">
+    <h2>Event Timeline</h2>
+    <div class="timeline">
+      <div class="event left">
+        <div class="event-content">
+          <h3>9:50 AM</h3>
+          <p>Inauguration & Welcome Speech</p>
+        </div>
+      </div>
+      <div class="event right">
+        <div class="event-content">
+          <h3>11:00 AM</h3>
+          <p>Project Presentations Begin</p>
+        </div>
+      </div>
+      <div class="event left">
+        <div class="event-content">
+          <h3>1:00 PM</h3>
+          <p>Break & Networking</p>
+        </div>
+      </div>
+      <div class="event right">
+        <div class="event-content">
+          <h3>2:30 PM</h3>
+          <p>Judging Round</p>
+        </div>
+      </div>
+      <div class="event left">
+        <div class="event-content">
+          <h3>4:30 PM</h3>
+          <p>Prize Distribution & Closing</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Details -->
   <div class="section details">
     <h2>Event Details</h2>
     <ul>
       <li><strong>Date:</strong> 23rd April 2025</li>
-      <li><strong>Time:</strong> Starts at 10:00 AM</li>
-      <li><strong>Venue:</strong> Aryabhata Building, Room 404, Centurion University</li>
-      <li><strong>Organized by:</strong> Coding Club of Centurion University</li>
-      <li><strong>Note:</strong> Bring your laptop and presentation files.</li>
+      <li><strong>Time:</strong> 10:00 AM - 5:00 PM</li>
+      <li><strong>Venue:</strong> Aryabhata Building, Room 404</li>
+      <li><strong>Organized by:</strong> Coding Club, Centurion University</li>
+      <li><strong>Note:</strong> Bring your laptop </li>
     </ul>
   </div>
 
+  <!-- Footer -->
   <footer>
+    <img src="college-logo.png" alt="Centurion Logo">
     <img src="coding club original.png" alt="Coding Club Logo">
-    <p>Organized by Coding Club</p>
-    <p><em>"Decode the Future"</em></p>
+    <p>Organized by Coding Club, Centurion University</p>
+    <p><em>“Decode the Future”</em></p>
   </footer>
 
   <!-- Countdown Timer Script -->
   <script>
     const countdown = () => {
-      const countDate = new Date("April 23, 2025 10:00:00").getTime();
+      const eventDate = new Date("April 23, 2025 10:00:00").getTime();
       const now = new Date().getTime();
-      const gap = countDate - now;
+      const gap = eventDate - now;
 
+      const day = 1000 * 60 * 60 * 24;
+      const hour = 1000 * 60 * 60;
+      const minute = 1000 * 60;
       const second = 1000;
-      const minute = second * 60;
-      const hour = minute * 60;
-      const day = hour * 24;
 
-      const textDay = Math.floor(gap / day);
-      const textHour = Math.floor((gap % day) / hour);
-      const textMinute = Math.floor((gap % hour) / minute);
-      const textSecond = Math.floor((gap % minute) / second);
+      const d = Math.floor(gap / day);
+      const h = Math.floor((gap % day) / hour);
+      const m = Math.floor((gap % hour) / minute);
+      const s = Math.floor((gap % minute) / second);
 
-      document.getElementById("countdown").innerHTML =
-        `Starts in: ${textDay}d ${textHour}h ${textMinute}m ${textSecond}s`;
+      document.getElementById('countdown').innerText =
+        `Starts in: ${d}d ${h}h ${m}m ${s}s`;
     };
 
     setInterval(countdown, 1000);
   </script>
 
-  <!-- Fun Confetti Script -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+  <!-- Background Music (Click to trigger) -->
+  <audio id="bgMusic" autoplay loop>
+    <source src="bg-music.mp3" type="audio/mpeg">
+  </audio>
   <script>
-    window.onload = () => {
-      confetti({
-        particleCount: 200,
-        spread: 70,
-        origin: { y: 0.6 }
+    document.addEventListener("DOMContentLoaded", () => {
+      const music = document.getElementById("bgMusic");
+      music.play().catch(() => {
+        document.addEventListener("click", () => music.play(), { once: true });
       });
-    };
-  </script>
-<script>
-  window.onload = () => {
-    setTimeout(() => {
-      const answer = prompt("🔥 Quick Question: What’s the capital of innovation?");
-      if (answer && answer.toLowerCase().includes("projectthon")) {
-        alert("🎉 That’s the spirit! Let’s innovate!");
-      } else {
-        alert("😉 Hint: It's Projectthon!");
-      }
-
-      // Confetti blast after the quiz
-      confetti({
-        particleCount: 200,
-        spread: 100,
-        origin: { y: 0.6 }
-      });
-    }, 1500);
-  };
-</script>
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const music = document.getElementById("bgMusic");
-
-    music.play().catch(() => {
-      document.addEventListener("click", () => {
-        music.play();
-      }, { once: true });
     });
-  });
-</script>
-
-
+  </script>
 </body>
 </html>
