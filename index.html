@@ -38,11 +38,13 @@
     }
 
     .hero h1 {
-      font-size: 3rem;
-      margin: 20px 0 10px;
-      color: #b673f1;
-      font-family: 'Orbitron', sans-serif;
-    }
+  font-size: 3rem;
+  margin: 20px 0 10px;
+  color: #b673f1;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 10px #b673f1, 0 0 20px #9b59b6;
+}
+
 
     .hero p {
       font-size: 1.2rem;
@@ -204,6 +206,25 @@
       });
     };
   </script>
+<script>
+  window.onload = () => {
+    setTimeout(() => {
+      const answer = prompt("🔥 Quick Question: What’s the capital of innovation?");
+      if (answer && answer.toLowerCase().includes("projectthon")) {
+        alert("🎉 That’s the spirit! Let’s innovate!");
+      } else {
+        alert("😉 Hint: It's Projectthon!");
+      }
+
+      // Confetti blast after the quiz
+      confetti({
+        particleCount: 200,
+        spread: 100,
+        origin: { y: 0.6 }
+      });
+    }, 1500);
+  };
+</script>
 
 </body>
 </html>
